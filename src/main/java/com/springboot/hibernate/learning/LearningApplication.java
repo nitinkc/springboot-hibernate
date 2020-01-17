@@ -1,7 +1,5 @@
 package com.springboot.hibernate.learning;
 
-import com.springboot.hibernate.learning.d1.basic.singleTable.entity.Student;
-import com.springboot.hibernate.learning.d1.basic.singleTable.repository.StudentRepository;
 import org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LearningApplication{
 
 	@Autowired
-	private static StudentRepository studentRepository;
 	private static final Logger LOG = LoggerFactory.getLogger(LearningApplication.class);
 
 	public static void main(String[] args){

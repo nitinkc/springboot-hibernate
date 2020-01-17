@@ -1,4 +1,4 @@
-package d4.hasA.mapping;
+package com.springboot.hibernate.learning.many2many.old;
 /*
  * If Only @ManyToMany Annotation is used, there will be multiple tables with the 
  * redundant data consisting foreign keys.
@@ -32,9 +32,9 @@ public class M3Student {
 	@JoinTable(
 			name="Joined_Table",
 			// Name in the Student table (Current Table)
-			joinColumns=@JoinColumn(name="ENROLL_NO"),
+			joinColumns=@JoinColumn(name="ENROLL_NO",nullable=true),
 			//Name in the Other Table (Entity)
-			inverseJoinColumns=@JoinColumn(name="COMP_ID")
+			inverseJoinColumns=@JoinColumn(name="COMP_ID",nullable=true)
 		  )
 	private List<M3ComputerLab> AssignedToComp = new ArrayList<M3ComputerLab>();
 	//private List<M3ComputerLab> AssignedToComp;

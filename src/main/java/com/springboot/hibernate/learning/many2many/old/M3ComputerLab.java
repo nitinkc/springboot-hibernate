@@ -1,4 +1,4 @@
-package d4.hasA.mapping;
+package com.springboot.hibernate.learning.many2many.old;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,16 +1,31 @@
-package d4.hasA.mapping;
+package com.springboot.hibernate.learning.many2many.old;
+
+import com.springboot.hibernate.learning.test.City;
+import com.springboot.hibernate.learning.test.MyRunner;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+@Component
+public class T3MTMTester  implements CommandLineRunner {
 
-public class T3MTMTester {
+	@Autowired
+	private M3CompLabRepo compLabRepo;
+	@Autowired
+	private M3StudRepo studRepo;
+	private static final Logger logger = LoggerFactory.getLogger(MyRunner.class);
 
-	public static void main(String[] args) {
-		/* Both the participating tables has Alphanumeric Primary keys 
+
+	@Override
+	public void run(String... args) throws Exception {
+		/* Both the participating tables has Alphanumeric Primary keys
 		 * Thus no @GeneratedValues annotation is used in either table
 		 * */
 
@@ -78,23 +93,18 @@ public class T3MTMTester {
 		student2.setAssignedToComp(compLab2);
 		student3.setAssignedToComp(compLab1);
 
-		SessionFactory sessionFactory = new AnnotationConfiguration()
-				.configure().buildSessionFactory();
+		studRepo.save(student1);
+		studRepo.save(student2);
+		studRepo.save(student3);
 
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		
-		session.save(lab1);
-		session.save(lab2);
-		session.save(lab3);
-		session.save(lab4);
-		session.save(lab5);
-		
-		session.save(student1);
-		session.save(student2);
-		session.save(student3);
+		compLabRepo.save(lab1);
+		compLabRepo.save(lab2);
+		compLabRepo.save(lab3);
+		compLabRepo.save(lab4);
+		compLabRepo.save(lab5);
 
-		session.getTransaction().commit();
-		session.close();
+
+
+		logger.info("# of Labs ", compLabRepo.count());
 	}
 }

@@ -46,7 +46,7 @@ import java.util.List;
             logger.info("------------------------");
 
             logger.info("Deleting all cities");
-            cityRepository.deleteAllInBatch();
+            //cityRepository.deleteAllInBatch();
 
             logger.info("# of cities: {}", cityRepository.count());
         }
