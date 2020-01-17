@@ -1,11 +1,10 @@
-package d9.hibernate.utils;
+package com.springboot.hibernate.learning.d9.hibernate.utils;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
 
 public class HibernateUtils {
-		private static SessionFactory sessionFactory = createSessionFactory();
+		/*private static SessionFactory sessionFactory = createSessionFactory();
 
 		private static SessionFactory createSessionFactory() {
 			try {
@@ -20,4 +19,4 @@ public class HibernateUtils {
 		public static Session createSession() {
 			return sessionFactory.openSession();
 		}
-}
+*/}

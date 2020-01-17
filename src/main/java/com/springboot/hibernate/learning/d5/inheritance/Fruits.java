@@ -1,4 +1,4 @@
-package d5.inheritance;
+package com.springboot.hibernate.learning.d5.inheritance;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;

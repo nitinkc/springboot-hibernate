@@ -1,4 +1,4 @@
-package d2.hasA.singTab.multCol;
+package com.springboot.hibernate.learning.d2.hasA.singTab.multCol;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

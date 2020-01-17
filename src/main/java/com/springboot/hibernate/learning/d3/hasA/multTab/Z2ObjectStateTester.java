@@ -1,4 +1,4 @@
-package d3.hasA.multTab;
+package com.springboot.hibernate.learning.d3.hasA.multTab;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

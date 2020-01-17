@@ -1,4 +1,4 @@
-package d4.hasA.mapping;
+package com.springboot.hibernate.learning.d4.hasA.mapping;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

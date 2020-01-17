@@ -1,4 +1,4 @@
-package d2.hasA.singTab.multCol;
+package com.springboot.hibernate.learning.d2.hasA.singTab.multCol;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;

@@ -1,4 +1,4 @@
-package d2.hasA.singTab.multCol;
+package com.springboot.hibernate.learning.d2.hasA.singTab.multCol;
 
 /**
  * HAS-A Relationship between User class and Address Class
@@ -7,9 +7,9 @@ package d2.hasA.singTab.multCol;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.springframework.boot.CommandLineRunner;
 
-public class Z1Tester {
+public class Z1Tester  implements CommandLineRunner  {
 	public static void main(String[] args) {
 		
 		/* 3 address that are used in the User Class*/
@@ -64,6 +64,11 @@ public class Z1Tester {
 		
 		session.getTransaction().commit();
 		session.close();			
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+
 	}
 }
 

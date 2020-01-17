@@ -1,4 +1,4 @@
-package d3.hasA.multTab;
+package com.springboot.hibernate.learning.d3.hasA.multTab;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

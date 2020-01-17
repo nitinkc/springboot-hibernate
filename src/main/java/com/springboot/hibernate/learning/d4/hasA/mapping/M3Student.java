@@ -1,4 +1,4 @@
-package d4.hasA.mapping;
+package com.springboot.hibernate.learning.d4.hasA.mapping;
 /*
  * If Only @ManyToMany Annotation is used, there will be multiple tables with the 
  * redundant data consisting foreign keys.
