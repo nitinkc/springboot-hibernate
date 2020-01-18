@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/main/java/com/springboot/hibernate/learning/many2many/old/T3MTMTester.java
 package com.springboot.hibernate.learning.many2many.old;
 
 import com.springboot.hibernate.learning.test.City;
@@ -9,6 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+=======
+package com.springboot.hibernate.learning.d4.hasA.mapping;
+>>>>>>> 42ca355de49003e5d26fd9bed64bf5e15a1463a0:src/main/java/com/springboot/hibernate/learning/d4/hasA/mapping/T3MTMTester.java
 
 import java.util.ArrayList;
 import java.util.List;

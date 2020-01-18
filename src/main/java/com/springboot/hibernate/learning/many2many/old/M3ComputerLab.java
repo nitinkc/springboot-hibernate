@@ -1,4 +1,8 @@
+<<<<<<< HEAD:src/main/java/com/springboot/hibernate/learning/many2many/old/M3ComputerLab.java
 package com.springboot.hibernate.learning.many2many.old;
+=======
+package com.springboot.hibernate.learning.d4.hasA.mapping;
+>>>>>>> 42ca355de49003e5d26fd9bed64bf5e15a1463a0:src/main/java/com/springboot/hibernate/learning/d4/hasA/mapping/M3ComputerLab.java
 
 import java.util.ArrayList;
 import java.util.List;
