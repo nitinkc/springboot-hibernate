@@ -16,7 +16,7 @@ import java.util.List;
     @Component
     public class MyRunner implements CommandLineRunner {
 
-        private static final Logger logger = LoggerFactory.getLogger(MyRunner.class);
+        private final Logger logger = LoggerFactory.getLogger(MyRunner.class);
 
         @Autowired
         private CityRepository cityRepository;

@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LearningApplication{
 
 	@Autowired
-	private static final Logger LOG = LoggerFactory.getLogger(LearningApplication.class);
+	static final Logger LOG = LoggerFactory.getLogger(LearningApplication.class);
 
 	public static void main(String[] args){
 

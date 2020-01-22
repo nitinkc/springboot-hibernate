@@ -5,70 +5,55 @@ package com.springboot.hibernate.learning.d2.hasA.singTab.multCol;
  * One Table for all the classes  
  */
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Z1Tester  implements CommandLineRunner  {
-	public static void main(String[] args) {
-		
+	@Autowired
+	private H2EmpRepository h2EmpRepository;
+	@Override
+	public void run(String... args) throws Exception {
 		/* 3 address that are used in the User Class*/
 		H2EmpAddress myOfficeAddress=new H2EmpAddress();
 		myOfficeAddress.setZipCode(12345);
 		myOfficeAddress.setEmpCity("Fremont");
-		
+
 		H2EmpAddress homeAddress=new H2EmpAddress();
 		homeAddress.setZipCode(54321);
 		homeAddress.setEmpCity("Chicago");
-		
+
 		H2EmpAddress hisOfficeAddress=new H2EmpAddress();
 		hisOfficeAddress.setZipCode(98765);
 		hisOfficeAddress.setEmpCity("Seattle");
-		
+
 		/* each user has two addresses, can be null */
 		H2Emp user1=new H2Emp();
 		//U_id is automatically set
 		user1.setEmpName("Roshej");
 		user1.setHomeAddress(homeAddress);
 		user1.setOfficeAddress(myOfficeAddress);
-		
+
 		H2Emp user2=new H2Emp();
 		user2.setEmpName("Gulgule");
 		user2.setHomeAddress(homeAddress);
 		user2.setOfficeAddress(hisOfficeAddress);
-		
+
 		H2Emp user3=new H2Emp();
 		user3.setEmpName("Biloo");
 		user3.setHomeAddress(hisOfficeAddress);
 		user3.setOfficeAddress(myOfficeAddress);
-		
-		//loading the hibernate.cfg.xml file details
-		SessionFactory sessionFactory = new AnnotationConfiguration()
-				.configure().buildSessionFactory();
-		
-		//create a Session interface ref for all the transaction
-		Session session=sessionFactory.openSession();
-		
-		//Starting the transaction for DB operations
-		session.beginTransaction();		
-		
+
 		//Asking the HB to persist these objects in DB
 		// save() will fire Insert query
-		session.save(user1);
-		session.save(user2);
-		session.save(user3);
-		
+		h2EmpRepository.save(user1);
+		h2EmpRepository.save(user2);
+		h2EmpRepository.save(user3);
+
 		// Retrieving the data - Difference between get and load
-		H2Emp h2Emp=(H2Emp)session.load(H2Emp.class, 1);
+		H2Emp h2Emp= h2EmpRepository.findById(1).get();
 		System.out.println(h2Emp.getEmpId() + " - " + h2Emp.getEmpName() +" - "+ h2Emp.getOfficeAddress().getEmpCity());
-		
-		session.getTransaction().commit();
-		session.close();			
-	}
-
-	@Override
-	public void run(String... args) throws Exception {
-
 	}
 }
 

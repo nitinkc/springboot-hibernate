@@ -1,9 +1,6 @@
 package com.springboot.hibernate.learning.d4.hasA.mapping;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class M2CellPhone {
@@ -18,7 +15,7 @@ public class M2CellPhone {
 	
 	private String model;
 	
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.ALL})
 	@JoinTable(name="COMMON_NAME")
 	private M2CellUser user;
 	

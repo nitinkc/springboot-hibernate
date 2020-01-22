@@ -3,16 +3,7 @@ package com.springboot.hibernate.learning.d3.hasA.multTab;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.CollectionOfElements;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "HasAMult")
@@ -34,11 +25,11 @@ public class H3Emp {
 	 * customized for the name 
 	 * */
 	
-	@CollectionOfElements
-//	@JoinTable(
-//			name="User_Addresses" ,
-//			joinColumns=@JoinColumn(name="empId")
-//		)
+	@ElementCollection
+	/*@JoinTable(
+			name="User_Addresses" ,
+			joinColumns=@JoinColumn(name="empId")
+		)*/
 	private List<H3EmpAddress> list = new ArrayList<H3EmpAddress>();
 	
 	

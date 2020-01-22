@@ -1,27 +1,22 @@
 package com.springboot.hibernate.learning.d3.hasA.multTab;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
-public class Z2ObjectStateTester {
-	public static void main(String[] args) {
+@Component
+public class Z2ObjectStateTester implements CommandLineRunner {
 
+	@Autowired
+	private AppleRepository appleRepository;
+
+	@Override
+	public void run(String... args) throws Exception {
 		Apple apple=new Apple();
 		//apple is transient now
 		apple.setAppleId(101);
 		apple.setAppleLocation("Kashmir");
-		
-		SessionFactory sessionFactory = new AnnotationConfiguration()
-				.configure().buildSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
 
-		session.save(apple);
-		
-		session.getTransaction().commit();
-		//Detached object
-		session.close();
-
+		appleRepository.save(apple);
 	}
 }

@@ -1,33 +1,27 @@
 package com.springboot.hibernate.learning.d4.hasA.mapping;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
-public class T1OTOTester {
-	public static void main(String[] args) {
-		
+@Component
+public class T1OTOTester implements CommandLineRunner {
+	@Autowired
+	private M1ResidentRepository m1ResidentRepository;
+	@Autowired
+	private M1SSNCardRespository m1SSNCardRespository;
+
+	@Override
+	public void run(String... args) throws Exception {
 		M1SSNCard card = new M1SSNCard();
 		card.setSsn(123456789);
 		card.setIssuedBy("Ohio");
-		
+
 		M1Resident person = new M1Resident();
 		person.setName("Nitin");
 		person.setSsn(card);
-		
-		SessionFactory sessionFactory = new AnnotationConfiguration()
-				.configure().buildSessionFactory();
 
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-
-		session.save(card);
-		session.save(person);
-
-		session.getTransaction().commit();
-		session.close();
-		
-		
+		m1SSNCardRespository.save(card);
+		m1ResidentRepository.save(person);
 	}
-
 }
