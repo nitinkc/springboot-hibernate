@@ -17,4 +17,7 @@ public class Vehicle2 {
     @JoinColumn(name = "stud_id")
     private Student2 student;
 
+    public Vehicle2(String vehName) {
+        this.vehName = vehName;
+    }
 }
