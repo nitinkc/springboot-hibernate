@@ -1,6 +1,5 @@
-package com.springboot.hibernate.learning.many2many;
+package com.springboot.hibernate.learning.gMany2Many;
 
-import com.springboot.hibernate.learning.test.City;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

@@ -1,8 +1,13 @@
 package com.springboot.hibernate.learning.d2.hasA.singTab.multCol;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+@Getter
+@Setter
 @Embeddable
 public class H2EmpAddress {
 	
@@ -14,23 +19,4 @@ public class H2EmpAddress {
 	
 	@Column(name="empCity")
 	private String empCity;
-
-	// Getters and Setters
-	
-	public int getZipCode() {
-		return zipCode;
-	}
-
-	public void setZipCode(int zipCode) {
-		this.zipCode = zipCode;
-	}
-
-	public String getEmpCity() {
-		return empCity;
-	}
-
-	public void setEmpCity(String empCity) {
-		this.empCity = empCity;
-	}
-
 }

@@ -1,4 +1,4 @@
-package com.springboot.hibernate.learning.one2many;
+package com.springboot.hibernate.learning.fOne2Many;
 
 import javax.persistence.*;
 

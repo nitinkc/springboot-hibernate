@@ -33,21 +33,21 @@ import java.util.List;
 
             logger.info("# of cities: {}", cityRepository.count());
 
-            logger.info("All cities unsorted:");
+            //logger.info("All cities unsorted:");
             List<City> cities = cityRepository.findAll();
-            logger.info("{}", cities);
+            //logger.info("{}", cities);
 
-            logger.info("------------------------");
+            //logger.info("------------------------");
 
-            logger.info("All cities sorted by name in descending order");
+            //logger.info("All cities sorted by name in descending order");
             List<City>  sortedCities = cityRepository.findAll(Sort.by(Sort.Direction.DESC, "name"));
-            logger.info("{}", sortedCities);
+            //logger.info("{}", sortedCities);
 
-            logger.info("------------------------");
+            //logger.info("------------------------");
 
-            logger.info("Deleting all cities");
+            //logger.info("Deleting all cities");
             //cityRepository.deleteAllInBatch();
 
-            logger.info("# of cities: {}", cityRepository.count());
+            //logger.info("# of cities: {}", cityRepository.count());
         }
 }

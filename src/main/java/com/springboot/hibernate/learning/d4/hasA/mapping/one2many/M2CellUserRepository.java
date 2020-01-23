@@ -1,4 +1,4 @@
-package com.springboot.hibernate.learning.d4.hasA.mapping;
+package com.springboot.hibernate.learning.d4.hasA.mapping.one2many;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

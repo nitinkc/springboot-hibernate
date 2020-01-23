@@ -8,6 +8,9 @@ import java.util.List;
  * One Table for all the classes  
  */
 
+import com.springboot.hibernate.learning.test.MyRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -16,6 +19,8 @@ import org.springframework.stereotype.Component;
 public class Z2Tester implements CommandLineRunner {
 	@Autowired
 	private H3EmpRepository h3EmpRepository;
+
+	private final Logger logger = LoggerFactory.getLogger(MyRunner.class);
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -51,11 +56,11 @@ public class Z2Tester implements CommandLineRunner {
 		//U_id is automatically set
 		me.setEmpName("Nitin");
 		// List of may addresses
-		me.setList(hisAddresses);
+		me.setList(myAdresses);
 
 		H3Emp him=new H3Emp();
 		him.setEmpName("Gulgule");
-		him.setList(myAdresses);
+		him.setList(hisAddresses);
 
 		H3Emp her=new H3Emp();
 		her.setEmpName("Biloo");
@@ -69,8 +74,10 @@ public class Z2Tester implements CommandLineRunner {
 		h3EmpRepository.save(her);
 
 		// Retrieving the data - Difference between get and load
-//		H3Emp h3Emp=h3EmpRepository.findById(1)
-//				.orElse(null);
-//		System.out.println(h3Emp.getEmpName() + " - - "+ h3Emp.getList());
+		logger.info("----------h3EmpRepository.findById(1)--------------");
+		H3Emp h3Emp=h3EmpRepository.findById(1)
+				.orElse(null);
+
+		System.out.println(h3Emp);
 	}
 }

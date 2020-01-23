@@ -1,4 +1,4 @@
-package com.springboot.hibernate.learning.d4.hasA.mapping;
+package com.springboot.hibernate.learning.d4.hasA.mapping.one2one;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
