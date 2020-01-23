@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "unidirectional_post")
+@Table(name = "unidir_post")
 public class Post {
     @Id
     @GeneratedValue
@@ -24,6 +24,8 @@ public class Post {
     @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true)
+    @JoinColumn(name = "post_id")
+    ///JoinColumn avoids another table creation
     private List<PostComment> comments = new ArrayList<>();
 
     public Post(String title) {

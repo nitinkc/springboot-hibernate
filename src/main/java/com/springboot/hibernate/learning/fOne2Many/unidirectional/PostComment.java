@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "unidirectional_postcomment")
+@Table(name = "unidir_postcomment")
 public class PostComment {
     @Id
     @GeneratedValue
