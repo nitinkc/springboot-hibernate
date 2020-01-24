@@ -19,9 +19,7 @@ public class PostBiDir {
     @Id
     @GeneratedValue
     private Long id;
-
     private String title;
-
     @OneToMany(
             mappedBy = "post",
             cascade = CascadeType.ALL,
