@@ -8,10 +8,11 @@ import javax.persistence.*;
 /**
  * Created by nitin on Thursday, January/23/2020 at 12:32 AM
  */
-@Getter
+
 @Setter
+@Getter
 @Entity
-@Table(name = "PostCommentBiDir")
+@Table(name = "BiDir_PostComments")
 public class PostCommentBiDir {
     @Id
     @GeneratedValue

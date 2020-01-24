@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "PostBiDir")
+@Table(name = "BiDir_Post")
 public class PostBiDir {
     @Id
     @GeneratedValue
