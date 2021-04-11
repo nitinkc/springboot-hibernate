@@ -1,0 +1,11 @@
+logging:
+    level:
+        com:
+            learningJPA:
+                dSpringDataRepository: TRACE
+        root: WARN
+    pattern:
+        console: '%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(%logger{0}){blue}%clr(%m){faint}%n'
+spring:
+    main:
+        banner-mode: 'off'

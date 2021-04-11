@@ -1,0 +1,12 @@
+server:
+  port: 5000
+
+spring:
+  main:
+    banner-mode: 'on'
+  profiles:
+#    active: qa
+    include: datasource-spanner,hibernate,logging
+
+inheritance: false
+e121: false

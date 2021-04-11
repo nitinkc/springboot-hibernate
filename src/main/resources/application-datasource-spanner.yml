@@ -1,0 +1,22 @@
+spring:
+    datasource:
+        # Spanner connection URL.
+        # - ${PROJECT_ID} Replace with your GCP project ID
+        # - ${INSTANCE_ID} Replace with your Spanner instance ID
+        # - ${DATABASE_NAME} Replace with your Spanner database name within your Spanner instance
+        url: jdbc:cloudspanner:/projects/unified-surfer-310204/instances/development-nc/databases/spanner-db
+        # Specify the Spanner JDBC driver.
+        driver-class-name: com.google.cloud.spanner.jdbc.JdbcDriver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                # Specify the Spanner Hibernate dialect.
+                dialect: com.google.cloud.spanner.hibernate.SpannerDialect
+                format_sql: true
+                jdbc:
+                    # Settings to enable batching statements for efficiency
+                    batch_size: 100
+                # display SQL statements for debugging
+                show_sql: true

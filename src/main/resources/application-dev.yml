@@ -1,0 +1,15 @@
+server:
+    port: 5000
+spring:
+    datasource:
+        driverClassName: org.h2.Driver
+        password: ''
+        url: jdbc:h2:mem:testdb
+        username: sa
+    h2:
+        console:
+            enabled: true
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+    profiles:
+        include: datasource-h2,hibernate,logging
