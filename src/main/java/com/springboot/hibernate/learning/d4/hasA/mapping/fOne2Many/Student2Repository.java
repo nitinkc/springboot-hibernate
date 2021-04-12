@@ -1,4 +1,4 @@
-package com.springboot.hibernate.learning.fOne2Many;
+package com.springboot.hibernate.learning.d4.hasA.mapping.fOne2Many;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

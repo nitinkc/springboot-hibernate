@@ -1,4 +1,4 @@
-package com.springboot.hibernate.learning.fOne2Many.bidirectional;
+package com.springboot.hibernate.learning.d4.hasA.mapping.fOne2Many.bidirectional;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.springboot.hibernate.learning.gMany2Many;
+package com.springboot.hibernate.learning.d4.hasA.mapping.gMany2Many;
 
 import javax.persistence.*;
 import java.util.ArrayList;

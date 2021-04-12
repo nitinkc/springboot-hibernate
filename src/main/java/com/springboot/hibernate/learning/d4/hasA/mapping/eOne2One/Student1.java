@@ -1,4 +1,4 @@
-package com.springboot.hibernate.learning.eOne2One;
+package com.springboot.hibernate.learning.d4.hasA.mapping.eOne2One;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,7 +19,7 @@ import javax.persistence.*;
 @Table(name="stud_oTo")
 public class Student1 {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long stud_id;
     private String stud_name;
     @OneToOne

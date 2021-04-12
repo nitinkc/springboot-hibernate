@@ -1,13 +1,16 @@
-package com.springboot.hibernate.learning.eOne2One;
+package com.springboot.hibernate.learning.d4.hasA.mapping.eOne2One;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.stereotype.Component;
 
 /**
  * Created by nitin on Wednesday, January/22/2020 at 10:38 PM
  */
 @Component
+//@Order(value = 2)
+@ConditionalOnExpression("${one2one:false}")
 public class One2OneTester implements CommandLineRunner {
     @Autowired
     private Student1Repository student1Repository;

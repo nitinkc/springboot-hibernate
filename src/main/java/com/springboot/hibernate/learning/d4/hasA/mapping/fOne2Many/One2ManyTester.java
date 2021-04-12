@@ -1,7 +1,8 @@
-package com.springboot.hibernate.learning.fOne2Many;
+package com.springboot.hibernate.learning.d4.hasA.mapping.fOne2Many;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -11,6 +12,8 @@ import java.util.List;
  * Created by nitin on Wednesday, January/22/2020 at 11:01 PM
  */
 @Component
+//@Order(value = 2)
+@ConditionalOnExpression("${One2ManyTester:false}")
 public class One2ManyTester implements CommandLineRunner {
     @Autowired
     private Student2Repository student2Repository;

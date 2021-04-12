@@ -1,4 +1,4 @@
-package com.springboot.hibernate.learning.eOne2One;
+package com.springboot.hibernate.learning.d4.hasA.mapping.eOne2One;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.springboot.hibernate.learning.fOne2Many;
+package com.springboot.hibernate.learning.d4.hasA.mapping.fOne2Many;
 
 import javax.persistence.*;
 
@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Table(name = "vehicle_oTm")
 public class Vehicle2 {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long vId;
     private String vehName;
     @ManyToOne

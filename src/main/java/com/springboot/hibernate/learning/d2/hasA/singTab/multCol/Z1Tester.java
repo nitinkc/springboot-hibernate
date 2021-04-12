@@ -7,9 +7,12 @@ package com.springboot.hibernate.learning.d2.hasA.singTab.multCol;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.stereotype.Component;
 
 @Component
+//@Order(value = 2)
+@ConditionalOnExpression("${multCol:false}")
 public class Z1Tester  implements CommandLineRunner  {
 	@Autowired
 	private H2EmpRepository h2EmpRepository;
