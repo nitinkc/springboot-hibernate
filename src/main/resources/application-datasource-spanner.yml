@@ -14,9 +14,9 @@ spring:
             hibernate:
                 # Specify the Spanner Hibernate dialect.
                 dialect: com.google.cloud.spanner.hibernate.SpannerDialect
-                format_sql: true
+                format_sql: false
                 jdbc:
                     # Settings to enable batching statements for efficiency
                     batch_size: 100
                 # display SQL statements for debugging
-                show_sql: true
+                show_sql: false
