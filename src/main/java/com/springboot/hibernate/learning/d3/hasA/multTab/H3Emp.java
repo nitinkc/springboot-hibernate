@@ -14,7 +14,7 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "bHasAMult")
-//DO NOT USE table or desc OR ANY RESERVED KEYEORD. SQL EXCEPTION OCCURS AS RESERVED KEYWORD USED
+//DO NOT USE table or desc OR ANY RESERVED KEYWORD. SQL EXCEPTION OCCURS AS RESERVED KEYWORD USED
 public class H3Emp {
 
 	@Id

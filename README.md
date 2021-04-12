@@ -1,10 +1,34 @@
-# One To Many
-A one-to-many association links two tables based on a Foreign Key column so that the child table record references 
-the Primary Key of the parent table row.
+For making full use of the free tier, The Database and it's corrosponding instance need to be up and running only while development and testing.
+Always delete the instance after the experimentation is done
 
-This association can either be Unidirectional One to Many association or Bidirectional One to Many
+```shell
+### Delete Instance
+gcloud spanner instances delete development-nc
+```
 
-* The bidirectional association requires the **child entity** mapping to provide a **@ManyToOne** annotation,
-* The unidirectional @OneToMany association is simple as parent-side requires One to many annotation.
+The following commands can be run.
 
-###
+```shell
+# First find the availabe instances
+cloud spanner instance-configs list
+
+# Costs 90 cents an hours
+gcloud spanner instances create development-nc --config=regional-us-central1 \
+--description="Spanner DB Instance" --nodes=1
+
+gcloud spanner databases create spanner-db --instance=development-nc
+```
+
+If needed :
+
+```shell
+### Update instance
+gcloud spanner instances update [INSTANCE-ID] --description=[INSTANCE-NAME]
+
+### Update the number of nodes
+gcloud spanner instances update [INSTANCE-ID] --nodes=[NODE-COUNT]
+```
+
+gcloud spanner databases ddl update orders \
+--instance=development-nc \
+--ddl="$(schema.ddl)"

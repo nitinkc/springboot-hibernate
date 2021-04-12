@@ -13,9 +13,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.stereotype.Component;
 
 @Component
+//@Order(value = 2)
+@ConditionalOnExpression("${z2Tester:false}")
 public class Z2Tester implements CommandLineRunner {
 	@Autowired
 	private H3EmpRepository h3EmpRepository;

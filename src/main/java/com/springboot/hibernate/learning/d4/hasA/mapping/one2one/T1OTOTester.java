@@ -2,9 +2,12 @@ package com.springboot.hibernate.learning.d4.hasA.mapping.one2one;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.stereotype.Component;
 
 @Component
+//@Order(value = 2)
+@ConditionalOnExpression("${T1OTOTester:false}")
 public class T1OTOTester implements CommandLineRunner {
 	@Autowired
 	private M1ResidentRepository m1ResidentRepository;

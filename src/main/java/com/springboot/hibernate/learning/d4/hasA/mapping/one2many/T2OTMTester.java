@@ -5,12 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.stereotype.Component;
 
 /* In this example the primary key is not declared to be int
  * String type is set and manually set. It works*/
 
 @Component
+//@Order(value = 2)
+@ConditionalOnExpression("${T2OTMTester:false}")
 public class T2OTMTester implements CommandLineRunner {
 
 	@Autowired

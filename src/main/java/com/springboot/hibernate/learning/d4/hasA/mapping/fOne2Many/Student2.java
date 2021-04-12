@@ -1,4 +1,4 @@
-package com.springboot.hibernate.learning.fOne2Many;
+package com.springboot.hibernate.learning.d4.hasA.mapping.fOne2Many;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +19,7 @@ import java.util.List;
 @Table(name="stud_oTm")
 public class Student2 {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long stud_id;
     private String name;
     @OneToMany

@@ -1,0 +1,22 @@
+server:
+  port: 5000
+
+spring:
+  main:
+    banner-mode: 'on'
+  profiles:
+#    active: qa
+    include: datasource-spanner,hibernate,logging
+
+inheritance: true
+e121: true
+test: true
+multCol: true
+objectState: true
+z2Tester: true
+one2one: true
+UnidirectionalOne2ManyTester: true
+One2ManyTester: true
+m2mTester: true
+T2OTMTester: true
+T1OTOTester: true
