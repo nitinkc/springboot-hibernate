@@ -13,9 +13,8 @@ The following commands can be run.
 cloud spanner instance-configs list
 
 # Costs 90 cents an hours
-gcloud spanner instances create development-nc --config=regional-us-central1 \                                                                                                                             ─╯
-    --description="Spanner DB Instance" --nodes=1
-
+gcloud spanner instances create development-nc --config=regional-us-central1 \
+--description="Spanner DB Instance" --nodes=1
 
 gcloud spanner databases create spanner-db --instance=development-nc
 ```
