@@ -10,7 +10,7 @@ The following commands can be run.
 
 ```shell
 # First find the availabe instances
-cloud spanner instance-configs list
+gcloud spanner instance-configs list
 
 # Costs 90 cents an hours
 gcloud spanner instances create development-nc --config=regional-us-central1 \

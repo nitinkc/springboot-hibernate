@@ -10,6 +10,7 @@ import java.io.Serializable;
 @Embeddable
 @EqualsAndHashCode
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Component

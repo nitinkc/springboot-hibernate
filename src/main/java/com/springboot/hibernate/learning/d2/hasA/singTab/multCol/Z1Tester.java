@@ -8,7 +8,10 @@ package com.springboot.hibernate.learning.d2.hasA.singTab.multCol;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 //@Order(value = 2)
@@ -55,8 +58,13 @@ public class Z1Tester  implements CommandLineRunner  {
 		h2EmpRepository.save(user3);
 
 		// Retrieving the data - Difference between get and load
-		H2Emp h2Emp= h2EmpRepository.findById(1).get();
-		System.out.println(h2Emp.getEmpId() + " - " + h2Emp.getEmpName() +" - "+ h2Emp.getOfficeAddress().getEmpCity());
+		//H2Emp h2Emp= h2EmpRepository.findById(1).get();//Id may not be 1, because of the auto generation.
+		//System.out.println(h2Emp.getEmpId() + " - " + h2Emp.getEmpName() +" - "+ h2Emp.getOfficeAddress().getEmpCity());
+
+		List<H2Emp> h2EmpList= h2EmpRepository.findAll(Sort.by(Sort.Direction.DESC, "empName"));//Id may not be 1, because of the auto generation.
+		h2EmpList.forEach(h2Emp -> {
+			System.out.println(h2Emp.getEmpId() + " - " + h2Emp.getEmpName() +" - "+ h2Emp.getOfficeAddress().getEmpCity());
+		});
 	}
 }
 

@@ -18,6 +18,6 @@ public class LearningApplication{
 
 		LOG.info("STARTING THE APPLICATION");
 		SpringApplication.run(LearningApplication.class, args);
-		LOG.info("APPLICATION FINISHED");
+		LOG.info("APPLICATION FINISHED CREATING MODEL AND LOADING TEST DATA");
 	}
 }

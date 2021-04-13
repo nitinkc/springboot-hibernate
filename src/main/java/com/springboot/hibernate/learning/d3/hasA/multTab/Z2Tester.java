@@ -9,6 +9,7 @@ import java.util.List;
  */
 
 import com.springboot.hibernate.learning.test.MyRunner;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,10 @@ import org.springframework.stereotype.Component;
 @Component
 //@Order(value = 2)
 @ConditionalOnExpression("${z2Tester:false}")
+@Slf4j
 public class Z2Tester implements CommandLineRunner {
 	@Autowired
 	private H3EmpRepository h3EmpRepository;
-
-	private final Logger logger = LoggerFactory.getLogger(MyRunner.class);
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -77,10 +77,10 @@ public class Z2Tester implements CommandLineRunner {
 		h3EmpRepository.save(her);
 
 		// Retrieving the data - Difference between get and load
-		logger.info("----------h3EmpRepository.findById(1)--------------");
+		log.info("----------h3EmpRepository.findById(1)--------------");
 		H3Emp h3Emp=h3EmpRepository.findById(1)
 				.orElse(null);
 
-		System.out.println(h3Emp);
+		log.info(String.valueOf(h3Emp));
 	}
 }
