@@ -1,4 +1,4 @@
-For making full use of the free tier, The Database and it's corrosponding instance need to be up and running only while development and testing.
+For making full use of the free tier, The Database and it's corresponding instance need to be up and running only while development and testing.
 Always delete the instance after the experimentation is done
 
 ```shell
