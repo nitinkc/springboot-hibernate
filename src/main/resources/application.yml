@@ -4,7 +4,7 @@ server:
 spring:
   profiles:
 #    active: qa
-    include: datasource-spanner,hibernate #,logging
+    include: datasource-h2,hibernate #,logging
 
 inheritance: true
 e121: true

@@ -16,7 +16,7 @@ import java.util.List;
 @Component
 //@Order(value = 2)
 @ConditionalOnExpression("${multCol:false}")
-public class Z1Tester  implements CommandLineRunner  {
+public class Z1Tester implements CommandLineRunner  {
 	@Autowired
 	private H2EmpRepository h2EmpRepository;
 	@Override
